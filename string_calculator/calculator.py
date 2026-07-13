@@ -33,12 +33,7 @@ def add(numbers : str) -> int:
         raise ValueError(f"negatives not allowed : {', '.join(map(str,negatives))}")
 
     # case : numbers greater than 1000 not allowed
-    gt_thousand = [num for num in num_list if num > 1000]
-    if gt_thousand:
-        raise ValueError(f"Numbers Greater than 1000 not allowed : {', '.join(map(str,gt_thousand))}")
-
-
-    return sum(num_list)
+    return sum(num for num in num_list if num < 1000)
 
 
 
