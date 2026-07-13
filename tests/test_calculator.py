@@ -23,3 +23,9 @@ def test_add_multiple_numbers():
 # Support New line as delimeter test 
 def test_support_new_line_as_delimeter():
     assert add("1\n2,3") == 6
+
+# Support Custom Delimeter (//) test
+def test_support_custom_delimeter():
+    assert add("//;\n1;2;3") == 6
+    assert add("//*\n1*3*4") == 8
+

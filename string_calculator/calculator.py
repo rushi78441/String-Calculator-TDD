@@ -1,3 +1,5 @@
+import re
+
 def add(numbers : str) -> int:
     # case  : Empty string
     if not numbers:
@@ -5,14 +7,24 @@ def add(numbers : str) -> int:
     
     # case : Adding two or more Numbers seperated with comma
     # case : Supporting new line as delimeter
-    if "," or "\n" in numbers:
-        # replace the newline with comma , to handle both 
-        numbers = numbers.replace("\n",",")
+    # case : Supporting Custom delimeter "//"
+    # default delimeter are comma and new line
+    delimeter = ",|\n"
+    
+    if numbers.startswith("//"):
+        # Split the header line from the actual numbers
+        # e.g., "//;\n1;2" becomes header="//;" and numbers="1;2"
+        header,numbers = numbers.split("\n",1)
 
-        # split and get numbers in list
-        num_list = [int(number) for number in numbers.split(sep = ',') if number.strip()]
-        return sum(num_list)
+        # extract custom delimeter charactors after  "//"
+        custom_delim = header[2:]
 
+        # Use re.escape to safely handle special regex characters like * or +
+        delimeter = re.escape(custom_delim)
 
-    # case : Adding Single Number
-    return int(numbers)
+    
+    # Split the string using the regex delimiter pattern
+    # This cleanly handles commas, newlines, OR your custom delimiter
+    num_list = [int(num) for num in re.split(delimeter, numbers) if num.strip()]
+    
+    return sum(num_list)
