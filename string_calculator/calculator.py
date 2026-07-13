@@ -27,4 +27,10 @@ def add(numbers : str) -> int:
     # This cleanly handles commas, newlines, OR your custom delimiter
     num_list = [int(num) for num in re.split(delimeter, numbers) if num.strip()]
     
+    # case : Negative numbers not allowed
+    negatives = [num for num in num_list if num < 0]
+    if negatives:
+        raise ValueError(f"negatives not allowed : {', '.join(map(str,negatives))}")
+
+
     return sum(num_list)

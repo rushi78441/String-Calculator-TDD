@@ -20,12 +20,19 @@ def test_add_multiple_numbers():
     assert add("1,2") == 1 + 2
     assert add("1,2,3,4,5") == 1 + 2 + 3 + 4 + 5  
 
-# Support New line as delimeter test 
+# Support New line as delimeter test : “1\n2,3”
 def test_support_new_line_as_delimeter():
     assert add("1\n2,3") == 6
 
-# Support Custom Delimeter (//) test
+# Support Custom Delimeter (//) test :  “//[delimiter]\n[numbers…]”
 def test_support_custom_delimeter():
     assert add("//;\n1;2;3") == 6
     assert add("//*\n1*3*4") == 8
+
+
+# Negative Number not allowed test
+def test_negative_numbers_raise_valueError():
+    with pytest.raises(ValueError) as exc_info:
+        add("1,-2,-4")
+    assert "negatives not allowed : -2, -4" in str(exc_info.value)
 
