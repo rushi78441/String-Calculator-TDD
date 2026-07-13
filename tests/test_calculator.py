@@ -18,4 +18,8 @@ def test_add_two_number():
 # Multiple numbers seperated with comma test
 def test_add_multiple_numbers():
     assert add("1,2") == 1 + 2
-    assert add("1,2,3,4,5") == 1 + 2 + 3 + 4 + 5 
+    assert add("1,2,3,4,5") == 1 + 2 + 3 + 4 + 5  
+
+# Support New line as delimeter test 
+def test_support_new_line_as_delimeter():
+    assert add("1\n2,3") == 6
