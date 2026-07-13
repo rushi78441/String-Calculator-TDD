@@ -36,3 +36,8 @@ def test_negative_numbers_raise_valueError():
         add("1,-2,-4")
     assert "negatives not allowed : -2, -4" in str(exc_info.value)
 
+# Number > 1000 is npt allowed test
+def test_num_gt_Thousand_raise_valueError():
+    with pytest.raises(ValueError) as exc_info:
+        add("1,10000,3,2000")
+    assert "Numbers Greater than 1000 not allowed : 10000, 2000" in str(exc_info)
