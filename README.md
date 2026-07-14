@@ -28,34 +28,34 @@ String-Calculator-TDD/
 ## SOLID Principles Applied
 This project demonstrates SOLID design principles:
 
-S — Single Responsibility Principle:
+- S — Single Responsibility Principle:
 DefaultNumberParser is responsible only for parsing the input string into numbers, while StringCalculator handles business rules (negatives, filtering, and summation).
-O — Open/Closed Principle:
+- O — Open/Closed Principle:
 The design is open for extension — new parsing strategies can be added without modifying existing classes.
-L — Liskov Substitution Principle:
+- L — Liskov Substitution Principle:
 Any implementation of NumberParser can safely replace DefaultNumberParser.
-I — Interface Segregation Principle:
+- I — Interface Segregation Principle:
 Small, focused abstract class with only one method.
-D — Dependency Inversion Principle:
+- D — Dependency Inversion Principle:
 High-level module (StringCalculator) depends on abstraction (NumberParser) rather than concrete implementation.
 
 ## TDD Lifecycle Followed
 Every feature was developed using strict Red → Green → Refactor cycle:
 
-Red: Write a failing test.
-Green: Write minimal code to make the test pass.
-Refactor: Improve code quality, readability, and structure.
-Commit: Small, meaningful commits showing the evolution.
+- Red: Write a failing test.
+- Green: Write minimal code to make the test pass.
+- Refactor: Improve code quality, readability, and structure.
+- Commit: Small, meaningful commits showing the evolution.
 
 ## Commit History Highlights
-Initial setup + empty string test
-Support for single and multiple numbers
-Newline delimiter support
-Custom delimiter support
-Negative number exception handling
-Ignore numbers greater than 1000
-Refactoring to OOP with SOLID principles
-Final cleanup and documentation
+- Initial setup + empty string test
+- Support for single and multiple numbers
+- Newline delimiter support
+- Custom delimiter support
+- Negative number exception handling
+- Ignore numbers greater than 1000
+- Refactoring to OOP with SOLID principles
+- Final cleanup and documentation
 
 # 1. Clone the repo
 git clone https://github.com/rushi78441/String-Calculator-TDD.git
