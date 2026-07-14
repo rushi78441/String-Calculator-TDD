@@ -24,47 +24,39 @@ String-Calculator-TDD/
 ├── requirements.txt
 └── .gitignore
 
-## SOLID Principles Applied
 
-This project demonstrates **SOLID** design principles:
+SOLID Principles Applied
+This project demonstrates SOLID design principles:
 
-- **S — Single Responsibility Principle**:  
-  `DefaultNumberParser` is responsible only for parsing the input string, while `StringCalculator` handles the business logic (negatives, summing, filtering > 1000).
+S — Single Responsibility Principle:
+DefaultNumberParser is responsible only for parsing the input string into numbers, while StringCalculator handles business rules (negatives, filtering, and summation).
+O — Open/Closed Principle:
+The design is open for extension — new parsing strategies can be added without modifying existing classes.
+L — Liskov Substitution Principle:
+Any implementation of NumberParser can safely replace DefaultNumberParser.
+I — Interface Segregation Principle:
+Small, focused abstract class with only one method.
+D — Dependency Inversion Principle:
+High-level module (StringCalculator) depends on abstraction (NumberParser) rather than concrete implementation.
 
-- **O — Open/Closed Principle**:  
-  The design is open for extension — you can easily add new parser strategies without modifying existing classes.
+TDD Lifecycle Followed
+Every feature was developed using strict Red → Green → Refactor cycle:
 
-- **L — Liskov Substitution Principle**:  
-  Any class implementing `NumberParser` can replace `DefaultNumberParser` without breaking the application.
+Red: Write a failing test.
+Green: Write minimal code to make the test pass.
+Refactor: Improve code quality, readability, and structure.
+Commit: Small, meaningful commits showing the evolution.
 
-- **I — Interface Segregation Principle**:  
-  Small and focused abstract class (`NumberParser`) with only one method.
+Commit History Highlights
 
-- **D — Dependency Inversion Principle**:  
-  High-level module (`StringCalculator`) depends on abstraction (`NumberParser`) rather than concrete implementation.
-
-## TDD Lifecycle Followed
-
-Every feature was developed using strict **Red → Green → Refactor** cycle:
-
-1. **Red**: Write a failing test first.
-2. **Green**: Write the minimal code to make the test pass.
-3. **Refactor**: Improve the code structure and readability while keeping tests green.
-4. **Commit**: Make a small, meaningful commit after each cycle.
-
-### Commit History Highlights
-You can see the complete history on GitHub:
-
-- Initial setup + empty string test
-- Support for single and multiple numbers
-- Newline delimiter support
-- Custom delimiter support
-- Negative number exception handling
-- Ignore numbers greater than 1000
-- OOP refactoring with SOLID principles
-- Final code cleanup and documentation
-
----
+Initial setup + empty string test
+Support for single and multiple numbers
+Newline delimiter support
+Custom delimiter support
+Negative number exception handling
+Ignore numbers greater than 1000
+Refactoring to OOP with SOLID principles
+Final cleanup and documentation
 
 # 1. Clone the repo
 git clone https://github.com/rushi78441/String-Calculator-TDD.git
