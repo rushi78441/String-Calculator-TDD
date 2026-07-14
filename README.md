@@ -23,9 +23,9 @@ String-Calculator-TDD/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
-
-SOLID Principles Applied
+## SOLID Principles Applied
 This project demonstrates SOLID design principles:
 
 S — Single Responsibility Principle:
@@ -39,7 +39,7 @@ Small, focused abstract class with only one method.
 D — Dependency Inversion Principle:
 High-level module (StringCalculator) depends on abstraction (NumberParser) rather than concrete implementation.
 
-TDD Lifecycle Followed
+## TDD Lifecycle Followed
 Every feature was developed using strict Red → Green → Refactor cycle:
 
 Red: Write a failing test.
@@ -47,8 +47,7 @@ Green: Write minimal code to make the test pass.
 Refactor: Improve code quality, readability, and structure.
 Commit: Small, meaningful commits showing the evolution.
 
-Commit History Highlights
-
+## Commit History Highlights
 Initial setup + empty string test
 Support for single and multiple numbers
 Newline delimiter support
